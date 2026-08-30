@@ -9,10 +9,10 @@ from SpeedLimitFetcher import resolveSpeedLimit
 def main():
     # Presentation banner for the terminal
     print("==================================================")
-    print("Q-DC: Arduino Q Driving Companion (v0.0.1)")
+    print("Q-DC: Arduino Q Driving Companion (v0.0.2)")
     print("==================================================")
 
-    print("\nRunning demonstration of real-time GPS data streaming with seperate module file")
+    print("\nRunning demonstration of real-time GPS data streaming and Speed Limit resolution from OpenStreetMap...\n")
     print("Connecting to phone GPS stream...")
     print("Press Ctrl+C to exit.\n")
 
