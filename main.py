@@ -4,6 +4,7 @@ import sys
 
 # Module declarations
 from gps.phyphox import get_latest_phone_gps
+from SpeedLimitFetcher import resolveSpeedLimit
 
 def main():
     # Presentation banner for the terminal
@@ -27,7 +28,18 @@ def main():
 
             if lat is not None and lon is not None:
                 consecutive_errors = 0
+
+                speedLimit = resolveSpeedLimit(lat, lon)
+
                 latency_ms = (time.time() - start_time) * 1000
+
+                # 3. Format output display
+                if speedLimit > 0:
+                    limit_str = f"{speedLimit:3d} km/h"
+                elif speedLimit == -1:
+                    limit_str = "FETCHING / UNKNOWN"
+                else:
+                    limit_str = "NO LIMIT DATA"
                 
                 # Format output for real-time monitoring
                 print(
@@ -35,6 +47,7 @@ def main():
                     f"Lat: {lat:10.6f} | "
                     f"Lon: {lon:10.6f} | "
                     f"Speed: {speed_kmh:5.1f} km/h | "
+                    f"Speed Limit: {limit_str} | "
                     f"Poll Latency: {latency_ms:4.1f}ms"
                 )
             else:
@@ -49,7 +62,7 @@ def main():
             time.sleep(0.5)
 
     except KeyboardInterrupt:
-        print("\n\n[Q-DC] Shutting down main orchestrator safely.")
+        print("\n\n[Q-DC] Stopping...")
         sys.exit(0)
 
 if __name__ == "__main__":
