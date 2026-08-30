@@ -26,6 +26,13 @@ def main():
             # Query the external gps_sensor module
             lat, lon, speed_kmh = get_latest_phone_gps()
 
+            # For testing purposes, we can simulate GPS data here. Only ONE situation should be active at a time. Uncomment the above line to use live GPS data.
+            #lat, lon, speed_kmh = 38.731443, -8.999027, 120 # Ponte Vasco da Gama, Lisbon
+            #lat, lon, speed_kmh = 38.699958, -9.385106, 50 # Avenida Marginal, Lisbon
+            #lat, lon, speed_kmh = 38.786956, -9.242713, 60 # CREL (Casal de Cambra toll), Lisbon
+            #lat, lon, speed_kmh = 38.906566, -9.045378, 50 # Populated area near Alverca, Lisbon
+
+
             if lat is not None and lon is not None:
                 consecutive_errors = 0
 
