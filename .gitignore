@@ -2,3 +2,7 @@
 /.DS_Store
 /gps/__pycache__/
 /__pycache__/
+/highwayTest.webm
+/LDW-System-V2.py
+/RPC-Packet-Decoder.py
+RPC-Packet-Encoder.py
