@@ -21,3 +21,6 @@ The Q-DC (Driving Companion) monitors vehicle motion parameters and environmenta
 
 ## License
 Distributed under the MIT License. See LICENSE for details.
+
+## Acknowledgments
+* Special thanks to **Hackster.io**, **Arduino**, and **Qualcomm** for providing the **Arduino Uno Q** hardware grant that made this project possible.
