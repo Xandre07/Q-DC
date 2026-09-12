@@ -3,8 +3,8 @@ import time
 import sys
 
 # Module declarations
-from gps.phyphox import get_latest_phone_gps
-from SpeedLimitFetcher import resolveSpeedLimit
+from python.phyphox import get_latest_phone_gps
+from python.SpeedLimitFetcher import resolveSpeedLimit
 
 def main():
     # Presentation banner for the terminal
